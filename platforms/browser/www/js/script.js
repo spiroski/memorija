@@ -29,14 +29,7 @@ $(document).on("click", ".puzzle-item", function () {
             }, 300);
         }
         if ($(".found").length == 12) {
-            if (level == "beginner") {
-                $(".overlay-content .content-wrapper p").html("TRY MEDIUM LEVEL.");
-            } else if (level == "medium") {
-                $(".overlay-content .content-wrapper p").html("TRY EXPERT LEVEL.");
-            } else if (level == "expert") {
-                $(".overlay-content .content-wrapper p").html("YOU ARE AN EXPERT!");
-            }
-            $(".overlay-content .content-wrapper h1").html("CONGRATULATIONS!");
+            $(".overlay-content .content-wrapper h1").html("Честкитки, победивте!");
             $(".overlay-content").addClass("active");
             clearInterval(counter);
         }
@@ -48,12 +41,14 @@ $(".start-game").on("click", function () {
     countdownTime = settings.countdownTime;
     counter = setInterval(timer, 1000);
     $(".level-container").hide();
+    $(".puzzle-container").show();
 });
 
 $(".new-game").on("click", function () {
     initPuzzleItems();
     $(".countdown").html("");
     $(".level-container").show();
+    $(".puzzle-container").hide();
     $("input[type=radio]").prop("checked", false);
     $(".puzzle-item").removeClass("active found");
     $(".overlay-content .content-wrapper p").html("");
@@ -88,7 +83,7 @@ function initPuzzleItems() {
 function timer() {
     countdownTime = countdownTime - 1;
     if (countdownTime <= 0) {
-        $(".overlay-content .content-wrapper h1").html("TIME'S UP!");
+        $(".overlay-content .content-wrapper h1").html("Времето истече!");
         $(".overlay-content").addClass("active");
         clearInterval(counter);
     }

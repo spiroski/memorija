@@ -41,6 +41,8 @@ $(".start-game").on("click", function () {
     countdownTime = settings.countdownTime;
     counter = setInterval(timer, 1000);
     $(".level-container").hide();
+    $(".settings").hide();
+    $(".settings .controls").hide();
     $(".puzzle-container").show();
 });
 
@@ -49,6 +51,7 @@ $(".new-game").on("click", function () {
     $(".countdown").html("");
     $(".level-container").show();
     $(".puzzle-container").hide();
+    $(".settings").show();
     $("input[type=radio]").prop("checked", false);
     $(".puzzle-item").removeClass("active found");
     $(".overlay-content .content-wrapper p").html("");
@@ -89,3 +92,13 @@ function timer() {
     }
     $(".countdown").html(countdownTime);
 }
+
+
+$('.settings-button').on('click', function (event) {
+    $('.settings .controls').toggle();
+    event.preventDefault();
+});
+
+$('#countdownTime').on('change', function (event) {
+    settings.countdownTime = $(this).val();
+});

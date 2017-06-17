@@ -1,25 +1,33 @@
 html,
 body {
-  width: 100%;
-  height: 100%;
-  font-family: "pt-sans", "Helvetica", "Arial"; }
+    width: 100%;
+    height: 100%;
+    font-family: "pt-sans", "Helvetica", "Arial";
+}
 
 #wrapper {
-  padding-top: 40px;
-  text-align: center;
-  position: relative; }
-  #wrapper h1 {
-    margin: 0; }
-  #wrapper p {
+    padding-top: 40px;
+    text-align: center;
+    position: relative;
+}
+
+#wrapper h1 {
+    margin: 0;
+}
+
+#wrapper p {
     margin-top: 10px;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+}
 
 .puzzle-container {
-  width: 608px;
-  margin-top: 30px;
-  display: inline-block;
-  border: 1px solid #000000; }
-  .puzzle-container .puzzle-item {
+    width: 608px;
+    margin-top: 30px;
+    display: inline-block;
+    border: 1px solid #000000;
+}
+
+.puzzle-container .puzzle-item {
     width: 150px;
     height: 150px;
     float: left;
@@ -28,84 +36,135 @@ body {
     border: 1px solid #000000;
     background-repeat: no-repeat;
     background-size: 60px 60px;
-    background-position: center center; }
-    .puzzle-container .puzzle-item:before {
-      content: "";
-      width: 150px;
-      height: 150px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      opacity: 1;
-      background-color: #ADADAD; }
-    .puzzle-container .puzzle-item:hover {
-      cursor: pointer; }
-    .puzzle-container .puzzle-item.octopus {
-      background-image: url(../images/octopus.png); }
-    .puzzle-container .puzzle-item.dinosaur {
-      background-image: url(../images/dinosaur.png); }
-    .puzzle-container .puzzle-item.bug {
-      background-image: url(../images/bug.png); }
-    .puzzle-container .puzzle-item.crab {
-      background-image: url(../images/crab.png); }
-    .puzzle-container .puzzle-item.sheep {
-      background-image: url(../images/sheep.png); }
-    .puzzle-container .puzzle-item.whale {
-      background-image: url(../images/whale.png); }
-    .puzzle-container .puzzle-item.active:before, .puzzle-container .puzzle-item.found:before {
-      background-color: transparent; }
+    background-position: center center;
+}
+
+.puzzle-container .puzzle-item:before {
+    content: "";
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+    background-color: #ADADAD;
+}
+
+.puzzle-container .puzzle-item:hover {
+    cursor: pointer;
+}
+
+.puzzle-container .puzzle-item.octopus {
+    background-image: url(../images/octopus.png);
+}
+
+.puzzle-container .puzzle-item.dinosaur {
+    background-image: url(../images/dinosaur.png);
+}
+
+.puzzle-container .puzzle-item.bug {
+    background-image: url(../images/bug.png);
+}
+
+.puzzle-container .puzzle-item.crab {
+    background-image: url(../images/crab.png);
+}
+
+.puzzle-container .puzzle-item.sheep {
+    background-image: url(../images/sheep.png);
+}
+
+.puzzle-container .puzzle-item.whale {
+    background-image: url(../images/whale.png);
+}
+
+.puzzle-container .puzzle-item.active:before, .puzzle-container .puzzle-item.found:before {
+    background-color: transparent;
+}
 
 .level-container {
-  margin-top: 30px; }
-  .level-container label span {
-    font-size: 14px; }
-  .level-container label:hover {
-    cursor: pointer; }
-  .level-container label + label {
-    margin-left: 20px; }
+    margin-top: 30px;
+}
+
+.level-container label span {
+    font-size: 14px;
+}
+
+.level-container label:hover {
+    cursor: pointer;
+}
+
+.level-container label + label {
+    margin-left: 20px;
+}
 
 button.outline-btn {
-  font-size: 14px;
-  width: 140px;
-  height: 36px;
-  margin-top: 30px;
-  color: #000000;
-  outline: 0;
-  border: 1px solid #000000;
-  border-radius: 4px;
-  background-color: transparent; }
+    font-size: 14px;
+    width: 140px;
+    height: 36px;
+    margin-top: 30px;
+    color: #000000;
+    outline: 0;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: transparent;
+}
 
 button.outline-btn.big {
-  .width: 300px;
-  height: 80px;
-  font-size: 25px;
+. width: 300 px;
+    height: 80px;
+    font-size: 25px;
 }
 
 span.countdown {
-  font-size: 60px;
-  font-weight: 600;
-  position: absolute;
-  top: 30px;
-  left: 30px; }
+    font-size: 60px;
+    font-weight: 600;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
 
 .overlay-content {
-  width: 100%;
-  height: 100%;
-  display: none;
-  flex: none;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -999;
-  background-color: rgba(255, 255, 255, 0.9); }
-  .overlay-content .content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex: none;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -999;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.overlay-content .content-wrapper {
     text-align: center;
-    align-self: center; }
-    .overlay-content .content-wrapper h1 {
-      font-size: 80px;
-      margin: 0; }
-  .overlay-content.active {
+    align-self: center;
+}
+
+.overlay-content .content-wrapper h1 {
+    font-size: 80px;
+    margin: 0;
+}
+
+.overlay-content.active {
     display: flex;
-    z-index: 999; }
+    z-index: 999;
+}
+
+.settings {
+    position: fixed;
+    text-align: right;
+    right: 10px;
+    top: 10px;
+    color: black;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.settings-button {
+    color: black;
+    text-decoration: none;
+}
