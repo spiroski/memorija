@@ -1,15 +1,18 @@
 {
-    "prepare_queue": {
-        "installed": [],
-        "uninstalled": []
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.pelisterka.memory"
     },
-    "config_munge": {
-        "files": {}
-    },
-    "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.pelisterka.memory"
-        }
-    },
-    "dependent_plugins": {}
+    "cordova-plugin-browsersync": {
+      "PACKAGE_NAME": "com.pelisterka.memory"
+    }
+  },
+  "dependent_plugins": {}
 }

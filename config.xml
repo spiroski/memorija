@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.pelisterka.memory" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>PelisterkaMemory</name>
+    <name>Memory</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Memory Game
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="dimitar.spiroski@gmail.com" href="spiroski.me">
+        Dimitar Spiroski
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -22,7 +22,8 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <engine name="android" spec="^6.2.3" />
-    <engine name="browser" spec="^4.1.0" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
+    <plugin name="cordova-plugin-browsersync" spec="^1.1.0" />
+    <engine name="android" spec="^6.2.3" />
+    <engine name="browser" spec="^5.0.3" />
 </widget>

@@ -1,4 +1,4 @@
-var puzzleItems = ["bug", "dinosaur", "octopus", "crab", "sheep", "whale", "bug", "dinosaur", "octopus", "crab", "sheep", "whale"];
+var puzzleItems = ["bug", "dinosaur", "octopus", "crab", "sheep", "whale", "dog", "cat", "bug", "dinosaur", "octopus", "crab", "sheep", "whale", "dog", "cat"];
 var activePuzzle = "";
 var started = false;
 var foundPuzzle = [];
@@ -34,6 +34,7 @@ $(document).on("click", ".puzzle-item", function () {
             clearInterval(counter);
         }
     }
+    resizePuzzleContainer();
 });
 
 $(".start-game").on("click", function () {
@@ -41,6 +42,8 @@ $(".start-game").on("click", function () {
     countdownTime = settings.countdownTime;
     counter = setInterval(timer, 1000);
     $(".level-container").hide();
+    $(".settings").hide();
+    $(".settings .controls").hide();
     $(".puzzle-container").show();
 });
 
@@ -49,6 +52,7 @@ $(".new-game").on("click", function () {
     $(".countdown").html("");
     $(".level-container").show();
     $(".puzzle-container").hide();
+    $(".settings").show();
     $("input[type=radio]").prop("checked", false);
     $(".puzzle-item").removeClass("active found");
     $(".overlay-content .content-wrapper p").html("");
@@ -88,4 +92,29 @@ function timer() {
         clearInterval(counter);
     }
     $(".countdown").html(countdownTime);
+}
+
+
+$('.settings-button').on('click', function (event) {
+    $('.settings .controls').toggle();
+    event.preventDefault();
+});
+
+$('#countdownTime').on('change', function (event) {
+    settings.countdownTime = $(this).val();
+});
+
+$(window).on('resize', function () {
+    resizePuzzleContainer();
+});
+
+
+function resizePuzzleContainer() {
+    height = $(window).height();
+    width = $(window).width();
+
+    puzzleSide = height < width ? height : width;
+    $('.puzzle-container')
+        .width(puzzleSide)
+        .height(puzzleSide);
 }

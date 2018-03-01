@@ -3,6 +3,9 @@ body {
     width: 100%;
     height: 100%;
     font-family: "pt-sans", "Helvetica", "Arial";
+    background: url('../img/bg.png');
+    background-size: cover;
+    background-position: center center;;
 }
 
 #wrapper {
@@ -21,15 +24,16 @@ body {
 }
 
 .puzzle-container {
-    width: 608px;
-    margin-top: 30px;
-    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
     border: 1px solid #000000;
 }
 
 .puzzle-container .puzzle-item {
-    width: 150px;
-    height: 150px;
+    box-sizing: border-box;
+    width: 25%;
+    height: 25%;
     float: left;
     position: relative;
     z-index: 0;
@@ -41,8 +45,8 @@ body {
 
 .puzzle-container .puzzle-item:before {
     content: "";
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -53,6 +57,10 @@ body {
 
 .puzzle-container .puzzle-item:hover {
     cursor: pointer;
+}
+
+.puzzle-container .puzzle-item {
+    background-color: white;
 }
 
 .puzzle-container .puzzle-item.octopus {
@@ -77,6 +85,14 @@ body {
 
 .puzzle-container .puzzle-item.whale {
     background-image: url(../images/whale.png);
+}
+
+.puzzle-container .puzzle-item.dog {
+    background-image: url(../images/dog.png);
+}
+
+.puzzle-container .puzzle-item.cat {
+    background-image: url(../images/cat.png);
 }
 
 .puzzle-container .puzzle-item.active:before, .puzzle-container .puzzle-item.found:before {
@@ -118,11 +134,15 @@ button.outline-btn.big {
 }
 
 span.countdown {
+    display: block;
     font-size: 60px;
     font-weight: 600;
     position: absolute;
-    top: 30px;
-    left: 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    text-align: left;
 }
 
 .overlay-content {
@@ -144,7 +164,6 @@ span.countdown {
 }
 
 .overlay-content .content-wrapper h1 {
-    font-size: 80px;
     margin: 0;
 }
 

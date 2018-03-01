@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Пелистерка</title>
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <a href="#" class="settings fa-cog"></a>
-	<div id="wrapper">
-		<h1>Пелистерка</h1>
-		<p>наградува</p>
-		<div class="puzzle-container" style="display:none;">
-		</div>
-		<div class="level-container">
-			<button class="outline-btn big start-game">Играј</button>
-		</div>
-		<span class="countdown"></span>
-	</div>
-	<div class="overlay-content">
-		<div class="content-wrapper">
-			<h1>Времето истече!</h1>
-			<p></p>
-			<button class="outline-btn new-game">Играј повторно</button>
-		</div>
-	</div>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Меморија</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="settings">
+            <a href="#" class="settings-button fa-2x fa fa-cog"></a>
+            <div class="controls" style="display: none;">
+                <select name="countdownTime" id="countdownTime">
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30" selected>30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="1000">1000</option>
+                </select>
+            </div>
+        </div>
+        <div id="wrapper">
+            <div class="puzzle-container" style="display:none;">
+            </div>
+            <div class="level-container">
+                <h1>Меморија</h1>
+                <button class="outline-btn big start-game">Играј</button>
+            </div>
+            <span class="countdown"></span>
+        </div>
+        <div class="overlay-content">
+            <div class="content-wrapper">
+                <h1>Времето истече!</h1>
+                <p></p>
+                <button class="outline-btn new-game">Играј повторно</button>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
 </html>
