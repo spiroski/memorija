@@ -31,6 +31,7 @@ body {
 }
 
 .puzzle-container .puzzle-item {
+    cursor: pointer;
     box-sizing: border-box;
     width: 25%;
     height: 25%;
