@@ -165,7 +165,7 @@ incremental_deploy() {
 }
 
 addCnameFile() {
-  echo "tablanet.spiroski.me" > CNAME
+  echo "memorija.spiroski.me" > CNAME
   git add -f CNAME
 }
 
