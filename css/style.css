@@ -1,0 +1,189 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "pt-sans", "Helvetica", "Arial";
+    background: url('../img/bg.png');
+    background-size: cover;
+    background-position: center center;;
+}
+
+#wrapper {
+    padding-top: 40px;
+    text-align: center;
+    position: relative;
+}
+
+#wrapper h1 {
+    margin: 0;
+}
+
+#wrapper p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.puzzle-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #000000;
+}
+
+.puzzle-container .puzzle-item {
+    box-sizing: border-box;
+    width: 25%;
+    height: 25%;
+    float: left;
+    position: relative;
+    z-index: 0;
+    border: 1px solid #000000;
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    background-position: center center;
+}
+
+.puzzle-container .puzzle-item:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+    background-color: #ADADAD;
+}
+
+.puzzle-container .puzzle-item:hover {
+    cursor: pointer;
+}
+
+.puzzle-container .puzzle-item {
+    background-color: white;
+}
+
+.puzzle-container .puzzle-item.octopus {
+    background-image: url(../images/octopus.png);
+}
+
+.puzzle-container .puzzle-item.dinosaur {
+    background-image: url(../images/dinosaur.png);
+}
+
+.puzzle-container .puzzle-item.bug {
+    background-image: url(../images/bug.png);
+}
+
+.puzzle-container .puzzle-item.crab {
+    background-image: url(../images/crab.png);
+}
+
+.puzzle-container .puzzle-item.sheep {
+    background-image: url(../images/sheep.png);
+}
+
+.puzzle-container .puzzle-item.whale {
+    background-image: url(../images/whale.png);
+}
+
+.puzzle-container .puzzle-item.dog {
+    background-image: url(../images/dog.png);
+}
+
+.puzzle-container .puzzle-item.cat {
+    background-image: url(../images/cat.png);
+}
+
+.puzzle-container .puzzle-item.active:before, .puzzle-container .puzzle-item.found:before {
+    background-color: transparent;
+}
+
+.level-container {
+    margin-top: 30px;
+}
+
+.level-container label span {
+    font-size: 14px;
+}
+
+.level-container label:hover {
+    cursor: pointer;
+}
+
+.level-container label + label {
+    margin-left: 20px;
+}
+
+button.outline-btn {
+    font-size: 14px;
+    width: 140px;
+    height: 36px;
+    margin-top: 30px;
+    color: #000000;
+    outline: 0;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+button.outline-btn.big {
+. width: 300 px;
+    height: 80px;
+    font-size: 25px;
+}
+
+span.countdown {
+    display: block;
+    font-size: 60px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    text-align: left;
+}
+
+.overlay-content {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex: none;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -999;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.overlay-content .content-wrapper {
+    text-align: center;
+    align-self: center;
+}
+
+.overlay-content .content-wrapper h1 {
+    margin: 0;
+}
+
+.overlay-content.active {
+    display: flex;
+    z-index: 999;
+}
+
+.settings {
+    position: fixed;
+    text-align: right;
+    right: 10px;
+    top: 10px;
+    color: black;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.settings-button {
+    color: black;
+    text-decoration: none;
+}
