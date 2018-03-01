@@ -10,6 +10,7 @@ var settings = {
 };
 initPuzzleItems();
 
+
 $(document).on("click", ".puzzle-item", function () {
     if (started) {
         $(this).addClass("active");
@@ -28,14 +29,18 @@ $(document).on("click", ".puzzle-item", function () {
                 $(".puzzle-item").removeClass("temp_found");
             }, 300);
         }
-        if ($(".found").length == 12) {
-            $(".overlay-content .content-wrapper h1").html("Честкитки, победивте!");
-            $(".overlay-content").addClass("active");
-            clearInterval(counter);
-        }
+
+        checkWin();
     }
-    resizePuzzleContainer();
 });
+
+function checkWin() {
+    if ($(".found").length === puzzleItems.length) {
+        $(".overlay-content .content-wrapper h1").html("Честкитки, победивте!");
+        $(".overlay-content").addClass("active");
+        clearInterval(counter);
+    }
+}
 
 $(".start-game").on("click", function () {
     started = true;
@@ -104,17 +109,27 @@ $('#countdownTime').on('change', function (event) {
     settings.countdownTime = $(this).val();
 });
 
+$(document).on('ready', resizePuzzleContainer);
+
 $(window).on('resize', function () {
     resizePuzzleContainer();
 });
 
+$(document).on('click', '.countdown', function () {
+    $('.puzzle-item').addClass('found');
+    checkWin();
+});
 
 function resizePuzzleContainer() {
     height = $(window).height();
     width = $(window).width();
 
-    puzzleSide = height < width ? height : width;
+    puzzleSide = ( height < width ? height : width ) - 25;
     $('.puzzle-container')
         .width(puzzleSide)
-        .height(puzzleSide);
+        .height(puzzleSide)
+        .css({
+            left: (width - puzzleSide) / 2,
+            top: (height - puzzleSide) / 2
+        })
 }
